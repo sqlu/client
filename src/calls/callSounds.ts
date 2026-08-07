@@ -42,12 +42,12 @@ function resume(ac: AudioContext): Promise<void> {
 }
 
 interface SynthNote {
-  f: number;
-  fEnd?: number;
-  d: number;
-  t: number;
-  type?: OscillatorType;
-  v?: number;
+  f: number;             // Frequency Hz
+  fEnd?: number;         // End frequency Hz for pitch bends
+  d: number;             // Total note duration
+  t: number;             // Delay before playing the note
+  type?: OscillatorType; // Waveform: 'sine', 'triangle', 'square', 'sawtooth'
+  v?: number;            // Volume multiplier (0 to 1)
 }
 
 function playSynth(notes: SynthNote[], globalVolume = 0.15, flag?: string): void {
