@@ -1608,7 +1608,6 @@ textarea {
     padding-top: env(safe-area-inset-top, 0px);
   }
 
-  .app.is-tauri .members-mobile,
   .app.app--desktop-titlebar .members-mobile,
   .is-tauri-desktop .members-mobile {
     top: 30px !important;
@@ -1616,10 +1615,21 @@ textarea {
     height: calc(100dvh - 30px) !important;
   }
 
-  .app.is-tauri .members-mobile-backdrop,
   .app.app--desktop-titlebar .members-mobile-backdrop,
   .is-tauri-desktop .members-mobile-backdrop {
     top: 30px;
+  }
+
+  :root.is-android-runtime .members-mobile,
+  .app:not(.app--desktop-titlebar) .members-mobile {
+    top: 0 !important;
+    height: 100% !important;
+    height: 100dvh !important;
+  }
+
+  :root.is-android-runtime .members-mobile-backdrop,
+  .app:not(.app--desktop-titlebar) .members-mobile-backdrop {
+    top: 0 !important;
   }
 
   .members-fade-enter-active,
@@ -4528,7 +4538,6 @@ textarea {
   animation: modal-fade 120ms ease-out;
 }
 
-.app.is-tauri .settings,
 .app.app--desktop-titlebar .settings,
 :root.is-tauri-desktop .settings {
   top: 30px !important;
@@ -4536,6 +4545,14 @@ textarea {
   height: calc(100% - 30px) !important;
   height: calc(var(--app-viewport-height) - 30px) !important;
   bottom: 0 !important;
+}
+
+:root.is-android-runtime .settings,
+.app:not(.app--desktop-titlebar) .settings {
+  top: 0 !important;
+  inset-block-start: 0 !important;
+  height: 100% !important;
+  height: var(--app-viewport-height) !important;
 }
 
 :root.is-android-runtime .settings {
@@ -5892,7 +5909,6 @@ textarea {
     background: var(--bg);
   }
 
-  .app.is-tauri .settings,
   .app.app--desktop-titlebar .settings,
   .is-tauri-desktop .settings,
   :root.is-tauri-desktop .settings {
@@ -5900,6 +5916,14 @@ textarea {
     inset-block-start: 30px !important;
     height: calc(var(--app-viewport-height) - 30px) !important;
     bottom: 0 !important;
+  }
+
+  :root.is-android-runtime .settings,
+  .app:not(.app--desktop-titlebar) .settings {
+    top: 0 !important;
+    inset-block-start: 0 !important;
+    height: 100% !important;
+    height: var(--app-viewport-height) !important;
   }
 
   :root.is-tauri-desktop .settings__side {
@@ -7274,7 +7298,6 @@ textarea {
       var(--surface);
   }
 
-  .app.is-tauri > .side,
   .app.app--desktop-titlebar > .side,
   .is-tauri-desktop .side,
   :root.is-tauri-desktop .side {
@@ -7282,6 +7305,13 @@ textarea {
     height: calc(100% - 30px) !important;
     height: calc(var(--app-viewport-height) - 30px) !important;
     bottom: 0 !important;
+  }
+
+  :root.is-android-runtime .side,
+  .app:not(.app--desktop-titlebar) > .side {
+    top: 0 !important;
+    height: 100% !important;
+    height: var(--app-viewport-height) !important;
   }
 
   .side__search {
